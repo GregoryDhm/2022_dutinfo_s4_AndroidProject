@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name" translatable="false">ProjetAndroid_DG_BA</string>
+    <string name="String_jouer">Jouer</string>
+    <string name="String_classement">Classement</string>
+    <string name="button_1" translatable="false">1</string>
+    <string name="button_2" translatable="false">2</string>
+    <string name="button_3" translatable="false">3</string>
+    <string name="button_4" translatable="false">4</string>
+    <string name="button_5" translatable="false">5</string>
+    <string name="button_6" translatable="false">6</string>
+    <string name="button_7" translatable="false">7</string>
+    <string name="button_8" translatable="false">8</string>
+    <string name="button_9" translatable="false">9</string>
+    <string name="button_0" translatable="false">0</string>
+    <string name="bouton_moins" translatable="false">(-)</string>
+    <string name="bouton_supprimer">SUPPR</string>
+    <string name="toolbar_repondre">Repondre</string>
+    <string name="toolbar_nettoyer">Vider</string>
+    <string name="toolbar_retour">Retour</string>
+    <string name="retourBtnClassement">Retour</string>
+    <string name="ERREUR_TROP_GRAND">Valeur trop grande</string>
+</resources>

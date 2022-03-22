@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/toolbar_repondre"
+        android:title="@string/toolbar_repondre"
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/toolbar_nettoyer"
+        android:title="@string/toolbar_nettoyer"
+        app:showAsAction="" />
+
+    <item
+        android:id="@+id/toolbar_retour"
+        android:title="@string/toolbar_retour"
+        app:showAsAction="always" />
+</menu>
