@@ -1,8 +1,10 @@
-package com.example.projetandroid_dg_ba;
+package com.example.projetandroid_dg_ba.view;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -10,6 +12,9 @@ import android.view.MenuItem;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.example.projetandroid_dg_ba.R;
+import com.example.projetandroid_dg_ba.TypeOperationEnum;
 
 import java.util.Random;
 
@@ -59,16 +64,16 @@ public class Jouer_Activity extends AppCompatActivity {
         boutonDel.setOnClickListener(view -> removeValeur());
         Button boutonMoins = findViewById(R.id.MoinsButton);
         boutonMoins.setOnClickListener(view -> Moins());
+        Button boutonOk = findViewById(R.id.bouton_ok);
+        boutonOk.setOnClickListener(view -> calculResultat());
     }
 
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.toolbar,menu);
-        MenuItem toolbarRepondre = menu.findItem(R.id.toolbar_repondre);
-        MenuItem toolbarNettoyer = menu.findItem(R.id.toolbar_nettoyer);
-        MenuItem toolbarRetour = menu.findItem(R.id.toolbar_retour);
-        toolbarRepondre.setOnMenuItemClickListener(menuItem -> calculResultat());
-        toolbarNettoyer.setOnMenuItemClickListener(menuItem -> Clear());
+        MenuItem toolbarFinirGame = menu.findItem(R.id.toolbar_finirgame);
+        MenuItem toolbarRetour = menu.findItem(R.id.toolbar_clearclassement);
+        toolbarFinirGame.setOnMenuItemClickListener(menuItem -> finishGame());
         toolbarRetour.setOnMenuItemClickListener(menuItem -> RetourMenu());
         return true;
     }
@@ -83,12 +88,16 @@ public class Jouer_Activity extends AppCompatActivity {
         if (reponseElement == reponseUser) {
             score++;
             GenerateRandomEnigme();
+            textViewReponse.setTextColor(Color.GREEN);
+            textViewReponse.setText("score : " + score);
         }else{
             vie--;
             if(vie < 0)
                 fini();
-            else
-                textViewReponse.setText(vie +" vies restantes");
+            else {
+                textViewReponse.setTextColor(Color.RED);
+                textViewReponse.setText(vie + getString(R.string.remainingLives));
+            }
         }
         return true;
     }
@@ -144,6 +153,7 @@ public class Jouer_Activity extends AppCompatActivity {
     }
 
     private void ajouteValeur(Integer valeur){
+        textViewReponse.setTextColor(Color.LTGRAY);
         Integer reponseUser;
         try{
             reponseUser = Integer.parseInt(textViewReponse.getText().toString());
@@ -163,12 +173,14 @@ public class Jouer_Activity extends AppCompatActivity {
         try{
             reponseUser = Integer.parseInt(textViewReponse.getText().toString());
         }catch (Exception e){
-            return;
+            textViewReponse.setTextColor(Color.LTGRAY);
+            reponseUser = 0;
         }
         reponseUser = (int) reponseUser / 10;
         textViewReponse.setText(reponseUser.toString());
     }
 
+    @SuppressLint("SetTextI18n")
     private void Moins(){
         Integer reponseUser;
         try{
@@ -180,13 +192,18 @@ public class Jouer_Activity extends AppCompatActivity {
         textViewReponse.setText(reponseUser.toString());
     }
 
-    private boolean Clear() {
-        textViewReponse.setText("");
+    private boolean finishGame() {
+        fini();
         return true;
     }
 
     private void fini() {
-        Intent i = new Intent(this, activity_classement.class);
+        Intent i = null;
+        if (score > 0) {
+            i = new Intent(this, EndgameActivity.class);
+            i.putExtra("score", score);
+        }else
+            i = new Intent(this, MainActivity.class);
         startActivity(i);
     }
 

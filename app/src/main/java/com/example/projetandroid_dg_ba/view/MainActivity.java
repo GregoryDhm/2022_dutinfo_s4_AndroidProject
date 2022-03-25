@@ -1,10 +1,14 @@
-package com.example.projetandroid_dg_ba;
+package com.example.projetandroid_dg_ba.view;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
+
+import com.example.projetandroid_dg_ba.R;
+import com.example.projetandroid_dg_ba.view.Jouer_Activity;
+import com.example.projetandroid_dg_ba.view.activity_classement;
 
 public class MainActivity extends AppCompatActivity {
 

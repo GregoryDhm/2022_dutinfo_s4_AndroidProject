@@ -10,13 +10,16 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ProjetAndroid_DG_BA">
         <activity
-            android:name=".activity_classement"
+            android:name=".view.EndgameActivity"
+            android:exported="true"/>
+        <activity
+            android:name=".view.activity_classement"
             android:exported="false" />
         <activity
-            android:name=".Jouer_Activity"
+            android:name=".view.Jouer_Activity"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
+            android:name=".view.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

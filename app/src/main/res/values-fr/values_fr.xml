@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="String_jouer">Jouer</string>
+    <string name="String_classement">tableau des scores</string>
+    <string name="bouton_supprimer">EFFACER</string>
+    <string name="toolbar_finirgame">Arreter la partie</string>
+    <string name="toolbar_retour">retour</string>
+    <string name="retourBtnClassement">retour</string>
+    <string name="ERREUR_TROP_GRAND">Valeur trop grande</string>
+    <string name="remainingLives">vies restantes</string>
+    <string name="buttonClearClassement">Effacer les scores</string>
+    <string name="textviewScore">Score</string>
+    <string name="enter_nickname">Saisir votre nom</string>
+    <string name="button_noSave">Ne pas enregistrer</string>
+    <string name="button_Save">enregistrer</string>
+    <string name="ERREUR_PSEUDONOTDEFINE">Pseudo non saisi</string>
+</resources>

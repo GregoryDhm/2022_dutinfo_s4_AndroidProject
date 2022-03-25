@@ -2,16 +2,12 @@
 <menu xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:android="http://schemas.android.com/apk/res/android">
     <item
-        android:id="@+id/toolbar_repondre"
-        android:title="@string/toolbar_repondre"
-        app:showAsAction="always" />
+        android:id="@+id/toolbar_clearclassement"
+        android:title="@string/toolbar_retour"
+        app:showAsAction="" />
     <item
-        android:id="@+id/toolbar_nettoyer"
-        android:title="@string/toolbar_nettoyer"
+        android:id="@+id/toolbar_finirgame"
+        android:title="@string/toolbar_finirgame"
         app:showAsAction="" />
 
-    <item
-        android:id="@+id/toolbar_retour"
-        android:title="@string/toolbar_retour"
-        app:showAsAction="always" />
 </menu>
