@@ -8,6 +8,7 @@ import java.util.List;
 public class ScoreService {
 
     private ScoreDao scoreDao;
+    private List<Score> TScore;
 
     public  ScoreService(ScoreDao scoreDao){this.scoreDao=scoreDao;}
 
@@ -15,8 +16,5 @@ public class ScoreService {
 
     public void storeScoreInDataBase(Score score){ scoreDao.create(score);}
 
-    public List<Score> query() {
-        return scoreDao.query();
-    }
-
+    public List<Score> query() { return scoreDao.query(); }
 }

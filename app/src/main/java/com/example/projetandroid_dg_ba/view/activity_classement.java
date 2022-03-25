@@ -29,7 +29,7 @@ public class activity_classement extends AppCompatActivity {
         boutonRetourClassement.setOnClickListener(view -> RetourMenu());
 
         TextView classement1 = findViewById(R.id.textview_classement_1);
-        classement1.setText(String.valueOf(scoreService.query().get(1)));
+        classement1.setText(scoreService.query().get(1).toString());
 
     }
 
